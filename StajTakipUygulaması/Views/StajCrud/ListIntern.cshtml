@@ -1,0 +1,231 @@
+﻿@model List<EntityLayer.Concrate.StajBilgi>
+<html lang="tr">
+<head>
+    <title>Öğrenci Görüntüleme Sayfası</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha512-BAhBUU3hMwJcVY7v6MjLgNmB/UJhITh+Gx6wyjO8lNt2CJ1+G6IdGdXUdy5n4oUsneDR0YqKe3f1i9v9me86Kg==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link href="~/css/list.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+</head>
+<body>
+    <div class="container mt-3 mb-4">
+        <div class="col-lg-9 mt-4 mt-lg-0">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="user-dashboard-info-box table-responsive mb-0 bg-white p-4 shadow-sm">
+                        <!-- Öğrenci Listeleme Tablosu -->
+                        <table class="table table-borderless ">
+                            <thead class="border-bottom fs-4">
+                                <div class="col-md-4 d-flex justify-content-start">
+                                    <a href="@Url.Action("StudentMain", "Student")" class="btn btn-danger btn-lg rounded-circle">
+                                        <i class="fas fa-arrow-right fa-flip-horizontal"></i>
+                                    </a>
+                                </div>
+                                <tr>
+                                    <th>Firma Adı</th>
+                                    <th>Başlangıç Tarihi </th>
+                                    <th>Bitiş Tarihi</th>
+                                    <th>Staj Süresi</th>
+                                    <th>Kabul Gün</th>
+                                    <th>Onayı</th>
+                                    <th>Kabulü</th>
+                                    <th>Katkı Payı Onayı</th>
+                                    <th>Araçlar</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var item in Model)
+                               {
+                                    var baslangicTarihi = item.Başlamatrh.Date;
+                                    var bitisTarihi = item.Bitistrh.Date;
+                                    var gunSayisi = 0;
+                                    var tarih = baslangicTarihi;
+
+                                    while (tarih <= bitisTarihi)
+                                    {
+                                        if (tarih.DayOfWeek != DayOfWeek.Saturday && tarih.DayOfWeek != DayOfWeek.Sunday)
+                                        {
+                                            if (item.CmtDahil == true || tarih.DayOfWeek != DayOfWeek.Saturday)
+                                            {
+                                                gunSayisi++;
+                                            }
+                                        }
+                                        tarih = tarih.AddDays(1);
+                                    }
+
+                                    <tr class="candidates-list">
+                                        <td class="title">
+                                            <div class="candidate-list-details">
+                                                <div class="candidate-list-info">
+                                                 
+                                                    <div class="candidate-list-option">
+                                                        <ul class="list-unstyled">
+                                                        <li>@item.AdUnvan</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                        <td >
+                                            <div class="candidate-list-details">
+                                                <div class="candidate-list-info">
+                                                 
+                                                    <div class="candidate-list-option">
+                                                        <ul class="list-unstyled">
+                                                            <li>@baslangicTarihi.ToShortDateString()</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                         <td >
+                                            <div class="candidate-list-details">
+                                                <div class="candidate-list-info">
+                                                 
+                                                    <div class="candidate-list-option">
+                                                        <ul class="list-unstyled">
+                                                        <li>@bitisTarihi.ToShortDateString()</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                         <td >
+                                            <div class="candidate-list-details">
+                                                <div class="candidate-list-info">
+                                                 
+                                                    <div class="candidate-list-option">
+                                                        <ul class="list-unstyled">
+                                                        <li>@gunSayisi.ToString("N0")</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                         <td >
+                                            <div class="candidate-list-details">
+                                                <div class="candidate-list-info">
+                                                 
+                                                    <div class="candidate-list-option">
+                                                        <ul class="list-unstyled">
+                                                        <li>@item.KabulGün</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                         <td>
+                                            <div class="candidate-list-details">
+                                                <div class="candidate-list-info">
+                                                 
+                                                    <div class="candidate-list-option">
+                                                       @if (item.Onay == true)
+                                                        {
+                                                            <i class="fas fa-check-circle fa-lg" style="color: #59ff00;"></i>
+                                                        }
+                                                        else
+                                                        {
+                                                            <i class="fas fa-window-close fa-lg" style="color: #e00000;"></i>
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                         <td>
+                                            <div class="candidate-list-details">
+                                                <div class="candidate-list-info">
+                                                 
+                                                    <div class="candidate-list-option">
+                                                            <div class="candidate-list-option">
+                                                                @if (item.Kabul == true)
+                                                                {
+                                                                    <i class="fas fa-check-circle fa-lg" style="color: #59ff00;"></i>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <i class="fas fa-window-close fa-lg " style="color: #e00000;"></i>
+                                                                }
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                         <td>
+                                            <div class="candidate-list-details">
+                                                <div class="candidate-list-info">
+                                                 
+                                                    <div class="candidate-list-option">
+                                                            <div class="candidate-list-option">
+                                                                @if (item.KatkıPayıOnay == true)
+                                                                {
+                                                                    <i class="fas fa-check-circle fa-lg" style="color: #59ff00;"></i>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <i class="fas fa-window-close fa-lg" style="color: #e00000;"></i>
+                                                                }
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            <ul class="list-unstyled mb-0 d-flex justify-content-end">
+
+                                            @Html.Raw("<li>")
+                                                <a href="/StajCrud/ListInternInfo/@item.StajBilgiID" data-toggle="tooltip" data-original-title="go">
+                                                <i class="fas fa-list" style="color: #44b9f3;"></i>
+                                            </a>
+                                            @Html.Raw("</li>")
+
+                                              @Html.Raw("<li>")
+                                              
+                                            <a href="/StajCrud/ListInternFile/@item.StajBilgiID" class='text-info' data-toggle='tooltip' data-original-title='Edit'>
+                                                <i class="fas fa-folder-open" style="color: #bcbe27;"></i>
+                                            </a>
+                                                
+                                            @Html.Raw("</li>")
+
+                                                @Html.Raw("<li>")
+                                                <a href="#" class='text-info' data-toggle='tooltip' data-original-title='Edit' onclick="return confirm ('Düzenlemek istediğinize emin misiniz?')">
+                                                <i class="fas fa-pencil-alt" style="color: #a3d41c;"></i>
+                                                </a>
+                                                @Html.Raw("</li>")
+
+                                                @Html.Raw("<li>")
+                                                <a href='@Url.Action("InternDel", new { item.StajBilgiID  })' class='text-danger' data-toggle='tooltip' data-original-title='Delete' onclick="return confirm ('Silmek istediğinize emin misiniz?')">
+                                                    <i class='far fa-trash-alt'></i>
+                                                </a>
+                                                @Html.Raw("</li>")
+                                            </ul>
+                                        </td>
+
+                                    </tr>
+                                }
+                            </tbody>    
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha512-rA/KkevB6sdV1QovhN2eeXuJFiJ3+UZU99oE0F0yvIfI5GlfQjZJnIqoBO2eS6qqnbwKQZy5/n7T8whBLWkUHw==" crossorigin="anonymous"></script>
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+

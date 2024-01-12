@@ -1,0 +1,33 @@
+﻿body {
+    background-image: url('/image/anafoto.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: initial;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.button-container {
+    height: 30vh;
+    width: 40vh;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-image: radial-gradient(circle at 50% -20.71%, #e5deff 0, #cfcafa 25%, #b5b5f2 50%, #98a1eb 75%, #788fe4 100%);
+}
+
+.btn-dark-blue {
+    background: #7474BF; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #348AC7, #7474BF); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #348AC7, #7474BF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+    border: 3px solid #eee;
+}

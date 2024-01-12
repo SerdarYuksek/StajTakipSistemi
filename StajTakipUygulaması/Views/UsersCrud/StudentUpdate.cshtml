@@ -1,0 +1,109 @@
+﻿@model EntityLayer.Concrate.Student
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Öğrenci Bilgi Güncelleme Sayfası</title>
+
+	<!-- Font Icon -->
+	<link rel="stylesheet" href="~/RegisterTemp/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+	<!-- Main css -->
+	<link rel="stylesheet" href="~/RegisterTemp/css/style.css">
+</head>
+<body>
+
+	<div class="main">
+		<div class="container">
+			<div class="signup-content">
+				<div class="signup-img">
+					<img src="~/registertemp/images/logo.png" />
+				</div>
+				<!-- Bilgi Güncelleme FORMU -->
+				<div class="signup-form">
+					@using (Html.BeginForm("StudentUpdate", "UsersCrud", FormMethod.Post, new { @class = "register-form", id = "register-form", enctype = "multipart/form-data" }))
+					{
+						<h2> Öğrenci Bilgileri Güncelleme Formu</h2>
+
+						<div class="form-group">
+							@Html.TextBoxFor(x => x.AdSoyad, new { placeholder = "Ad Soyad",type="text", name="adsoyad" })
+							@Html.ValidationMessageFor(x => x.AdSoyad )
+						</div>
+
+						<div class="form-group">
+							@Html.TextBoxFor(x => x.TCNO, new { placeholder = "TC Kimlik No",type="text", name="tcno" })
+							@Html.ValidationMessageFor(x => x.TCNO )
+						</div>
+
+						<div class="form-group">
+							@Html.TextBoxFor(x => x.Mail, new { placeholder = "E-Mail",type="email", name="mail" })
+							@Html.ValidationMessageFor(x => x.Mail )
+						</div>
+
+						<div class="form-radio">
+							<label for="gender" class="radio-label">Cinsiyet Seçiniz :</label>
+							<div class="form-radio-item">
+								@Html.RadioButtonFor(x =>x.Cinsiyet, true , new { id = "male" })
+								@Html.ValidationMessageFor(x => x.Cinsiyet )
+								<label for="male">Erkek</label>
+								<span class="check"></span>
+							</div>
+
+							<div class="form-radio-item">
+								@Html.RadioButtonFor(x =>x.Cinsiyet, false, new { id = "female" })
+								@Html.ValidationMessageFor(x => x.Cinsiyet )
+								<label for="female">Kadın</label>
+								<span class="check"></span>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<input type="file" name="Image" class="form-control" />
+							@Html.ValidationMessageFor(x => x.Image)
+						</div>
+
+						<div class="form-group">
+							@Html.TextBoxFor(x => x.OgrenciNo, new { placeholder = "Öğrenci No" ,type="text", name="ogrencino" })
+							@Html.ValidationMessageFor(x => x.OgrenciNo )
+						</div>
+
+						<div class="form-group">
+							<label for="sınıf">Sınıf :</label>
+							<div class="form-select">
+								<select name="sınıf" id="sınıf">
+									<option selected>@Model.sınıf</option>
+									<option value="1.sınıf">1.Sınıf</option>
+									<option value="2.sınıf">2.Sınıf</option>
+									<option value="3.sınıf">3.Sınıf</option>
+									<option value="4.sınıf">4.Sınıf</option>
+									<option value="Yüksek Lisans">Yüksek Lisans</option>
+								</select>
+								<span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+								@Html.ValidationMessageFor(x => x.sınıf )
+							</div>
+						</div>
+
+						<div class="form-group">
+							@Html.HiddenFor(x => x.KullaniciID)
+						</div>
+
+						<div class="form-submit">
+							<input type="reset" value="Temizle" class="submit" name="reset" id="reset" />
+							<input type="submit" value="Güncelle" class="submit" name="submit" id="submit" />
+						</div>
+
+					}
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- JS -->
+	<script src="~/RegisterTemp/vendor/jquery/jquery.min.js"></script>
+	<script src="~/RegisterTemp/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\AdminTemp\argon-dashboard-master\**" />
+    <Content Remove="wwwroot\AdminTemp\argon-dashboard-master\**" />
+    <EmbeddedResource Remove="wwwroot\AdminTemp\argon-dashboard-master\**" />
+    <None Remove="wwwroot\AdminTemp\argon-dashboard-master\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\StajDosyalar\staj-akis-semasi-04042022.pdf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\İnternTemp\.DS_Store" />
+    <None Include="wwwroot\İnternTemp\css\.DS_Store" />
+    <None Include="wwwroot\İnternTemp\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\İnternTemp\fonts\.DS_Store" />
+    <None Include="wwwroot\İnternTemp\fonts\icomoon\demo-files\demo.js" />
+    <None Include="wwwroot\İnternTemp\fonts\icomoon\fonts\icomoon.svg" />
+    <None Include="wwwroot\İnternTemp\images\.DS_Store" />
+    <None Include="wwwroot\İnternTemp\js\bootstrap.min.js" />
+    <None Include="wwwroot\İnternTemp\js\jquery-3.3.1.min.js" />
+    <None Include="wwwroot\İnternTemp\js\main.js" />
+    <None Include="wwwroot\İnternTemp\js\owl.carousel.min.js" />
+    <None Include="wwwroot\İnternTemp\js\popper.min.js" />
+    <None Include="wwwroot\İnternTemp\scss\.DS_Store" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\bootstrap-grid.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\bootstrap-reboot.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\bootstrap.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_alert.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_background-variant.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_badge.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_border-radius.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_box-shadow.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_breakpoints.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_buttons.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_caret.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_clearfix.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_deprecate.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_float.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_forms.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_gradients.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_grid-framework.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_grid.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_hover.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_image.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_list-group.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_lists.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_nav-divider.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_pagination.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_reset-text.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_resize.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_screen-reader.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_size.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_table-row.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_text-emphasis.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_text-hide.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_text-truncate.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_transition.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\mixins\_visibility.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\utilities\_align.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\utilities\_background.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\utilities\_borders.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\utilities\_clearfix.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\utilities\_display.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\utilities\_embed.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\utilities\_flex.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\utilities\_float.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\utilities\_overflow.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\utilities\_position.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\utilities\_screenreaders.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\utilities\_shadows.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\utilities\_sizing.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\utilities\_spacing.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\utilities\_stretched-link.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\utilities\_text.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\utilities\_visibility.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\vendor\_rfs.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_alert.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_badge.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_breadcrumb.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_button-group.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_buttons.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_card.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_carousel.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_close.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_code.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_custom-forms.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_dropdown.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_forms.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_functions.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_grid.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_images.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_input-group.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_jumbotron.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_list-group.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_media.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_mixins.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_modal.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_nav.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_navbar.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_pagination.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_popover.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_print.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_progress.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_reboot.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_root.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_spinners.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_tables.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_toasts.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_tooltip.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_transitions.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_type.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_utilities.scss" />
+    <None Include="wwwroot\İnternTemp\scss\bootstrap\_variables.scss" />
+    <None Include="wwwroot\İnternTemp\scss\style.scss" />
+    <None Include="wwwroot\UpdateTemp\css\style.css.map" />
+    <None Include="wwwroot\UpdateTemp\css\style.scss" />
+    <None Include="wwwroot\UpdateTemp\fonts\material-design-iconic-font\fonts\Material-Design-Iconic-Font.svg" />
+    <None Include="wwwroot\UpdateTemp\fonts\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff2" />
+    <None Include="wwwroot\UpdateTemp\js\jquery-3.3.1.min.js" />
+    <None Include="wwwroot\UpdateTemp\js\jquery.steps.js" />
+    <None Include="wwwroot\UpdateTemp\js\main.js" />
+    <None Include="wwwroot\UpdateTemp\vendor\date-picker\js\datepicker.en.js" />
+    <None Include="wwwroot\UpdateTemp\vendor\date-picker\js\datepicker.js" />
+    <None Include="wwwroot\RegisterTemp\.sass-cache\21880c0ffe15753a53f8402e9f64e1077e071510\style.scssc" />
+    <None Include="wwwroot\RegisterTemp\.sass-cache\2af427b2894d1e78c5806e231aa35d00838a84e0\style.scssc" />
+    <None Include="wwwroot\RegisterTemp\.sass-cache\5b5e4638a1b65395d974dddfa3d03b7a86b84808\extend.scssc" />
+    <None Include="wwwroot\RegisterTemp\.sass-cache\5b5e4638a1b65395d974dddfa3d03b7a86b84808\fonts.scssc" />
+    <None Include="wwwroot\RegisterTemp\.sass-cache\5b5e4638a1b65395d974dddfa3d03b7a86b84808\global.scssc" />
+    <None Include="wwwroot\RegisterTemp\.sass-cache\5b5e4638a1b65395d974dddfa3d03b7a86b84808\minxi.scssc" />
+    <None Include="wwwroot\RegisterTemp\.sass-cache\5b5e4638a1b65395d974dddfa3d03b7a86b84808\variables.scssc" />
+    <None Include="wwwroot\RegisterTemp\.sass-cache\632f5d1dd893d2e8764de51b8ca4120e25043113\extend.scssc" />
+    <None Include="wwwroot\RegisterTemp\.sass-cache\632f5d1dd893d2e8764de51b8ca4120e25043113\fonts.scssc" />
+    <None Include="wwwroot\RegisterTemp\.sass-cache\632f5d1dd893d2e8764de51b8ca4120e25043113\global.scssc" />
+    <None Include="wwwroot\RegisterTemp\.sass-cache\632f5d1dd893d2e8764de51b8ca4120e25043113\minxi.scssc" />
+    <None Include="wwwroot\RegisterTemp\.sass-cache\632f5d1dd893d2e8764de51b8ca4120e25043113\variables.scssc" />
+    <None Include="wwwroot\RegisterTemp\.sass-cache\643489b018602f15119d8f44aeb7fc79468873a9\main.scssc" />
+    <None Include="wwwroot\RegisterTemp\.sass-cache\643489b018602f15119d8f44aeb7fc79468873a9\responsive.scssc" />
+    <None Include="wwwroot\RegisterTemp\.sass-cache\7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39\extend.scssc" />
+    <None Include="wwwroot\RegisterTemp\.sass-cache\7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39\fonts.scssc" />
+    <None Include="wwwroot\RegisterTemp\.sass-cache\7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39\global.scssc" />
+    <None Include="wwwroot\RegisterTemp\.sass-cache\7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39\minxi.scssc" />
+    <None Include="wwwroot\RegisterTemp\.sass-cache\7643c8aa2e335ff5e104bc47d8dd7f1a0693bb39\variables.scssc" />
+    <None Include="wwwroot\RegisterTemp\.sass-cache\8d060da290f1e90ae74e56e843d8749396294ac1\main.scssc" />
+    <None Include="wwwroot\RegisterTemp\.sass-cache\8d060da290f1e90ae74e56e843d8749396294ac1\responsive.scssc" />
+    <None Include="wwwroot\RegisterTemp\.sass-cache\e17f2ac53a8b63135158793a481cf8f239449aec\style.scssc" />
+    <None Include="wwwroot\RegisterTemp\.sass-cache\f49285f1317a1cafa93ab4f5de346f92bbc40d58\main.scssc" />
+    <None Include="wwwroot\RegisterTemp\.sass-cache\f49285f1317a1cafa93ab4f5de346f92bbc40d58\responsive.scssc" />
+    <None Include="wwwroot\RegisterTemp\css\style.css.map" />
+    <None Include="wwwroot\RegisterTemp\fonts\material-icon\fonts\Material-Design-Iconic-Font.svg" />
+    <None Include="wwwroot\RegisterTemp\fonts\material-icon\fonts\Material-Design-Iconic-Font.woff2" />
+    <None Include="wwwroot\RegisterTemp\fonts\montserrat\montserrat-v12-latin-900.svg" />
+    <None Include="wwwroot\RegisterTemp\fonts\montserrat\montserrat-v12-latin-900.woff2" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\poppins-v5-latin-300.svg" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\poppins-v5-latin-300.woff2" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\poppins-v5-latin-300italic.svg" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\poppins-v5-latin-300italic.woff2" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\poppins-v5-latin-500.svg" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\poppins-v5-latin-500.woff2" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\poppins-v5-latin-500italic.svg" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\poppins-v5-latin-500italic.woff2" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\poppins-v5-latin-600.svg" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\poppins-v5-latin-600.woff2" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\poppins-v5-latin-700.svg" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\poppins-v5-latin-700.woff2" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\poppins-v5-latin-700italic.svg" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\poppins-v5-latin-700italic.woff2" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\poppins-v5-latin-800.svg" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\poppins-v5-latin-800.woff2" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\poppins-v5-latin-800italic.svg" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\poppins-v5-latin-800italic.woff2" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\poppins-v5-latin-900.svg" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\poppins-v5-latin-900.woff2" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\poppins-v5-latin-italic.svg" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\poppins-v5-latin-italic.woff2" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\poppins-v5-latin-regular.svg" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\poppins-v5-latin-regular.woff2" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\roboto-condensed-v16-latin-700.svg" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\roboto-condensed-v16-latin-700.woff2" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\roboto-condensed-v16-latin-700italic.svg" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\roboto-condensed-v16-latin-700italic.woff2" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\roboto-condensed-v16-latin-italic.svg" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\roboto-condensed-v16-latin-italic.woff2" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\roboto-condensed-v16-latin-regular.svg" />
+    <None Include="wwwroot\RegisterTemp\fonts\poppins\roboto-condensed-v16-latin-regular.woff2" />
+    <None Include="wwwroot\RegisterTemp\js\main.js" />
+    <None Include="wwwroot\RegisterTemp\scss\common\extend.scss" />
+    <None Include="wwwroot\RegisterTemp\scss\common\fonts.scss" />
+    <None Include="wwwroot\RegisterTemp\scss\common\global.scss" />
+    <None Include="wwwroot\RegisterTemp\scss\common\minxi.scss" />
+    <None Include="wwwroot\RegisterTemp\scss\common\variables.scss" />
+    <None Include="wwwroot\RegisterTemp\scss\layouts\main.scss" />
+    <None Include="wwwroot\RegisterTemp\scss\layouts\responsive.scss" />
+    <None Include="wwwroot\RegisterTemp\scss\style.scss" />
+    <None Include="wwwroot\RegisterTemp\vendor\jquery\jquery-ui.min.js" />
+    <None Include="wwwroot\RegisterTemp\vendor\jquery\jquery.min.js" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\less\animated.less" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\less\core.less" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\less\icons.less" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\less\larger.less" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\less\list.less" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\less\path.less" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\less\variables.less" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <None Include="wwwroot\LoginTemp\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <None Include="wwwroot\LoginTemp\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <None Include="wwwroot\LoginTemp\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <None Include="wwwroot\LoginTemp\js\main.js" />
+    <None Include="wwwroot\LoginTemp\vendor\animsition\js\animsition.js" />
+    <None Include="wwwroot\LoginTemp\vendor\animsition\js\animsition.min.js" />
+    <None Include="wwwroot\LoginTemp\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\LoginTemp\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\LoginTemp\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\LoginTemp\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\LoginTemp\vendor\bootstrap\css\bootstrap.css.map" />
+    <None Include="wwwroot\LoginTemp\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\LoginTemp\vendor\bootstrap\js\bootstrap.js" />
+    <None Include="wwwroot\LoginTemp\vendor\bootstrap\js\bootstrap.min.js" />
+    <None Include="wwwroot\LoginTemp\vendor\bootstrap\js\popper.js" />
+    <None Include="wwwroot\LoginTemp\vendor\bootstrap\js\popper.min.js" />
+    <None Include="wwwroot\LoginTemp\vendor\bootstrap\js\tooltip.js" />
+    <None Include="wwwroot\LoginTemp\vendor\countdowntime\countdowntime.js" />
+    <None Include="wwwroot\LoginTemp\vendor\daterangepicker\daterangepicker.js" />
+    <None Include="wwwroot\LoginTemp\vendor\daterangepicker\moment.js" />
+    <None Include="wwwroot\LoginTemp\vendor\daterangepicker\moment.min.js" />
+    <None Include="wwwroot\LoginTemp\vendor\jquery\jquery-3.2.1.min.js" />
+    <None Include="wwwroot\LoginTemp\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <None Include="wwwroot\LoginTemp\vendor\select2\select2.js" />
+    <None Include="wwwroot\LoginTemp\vendor\select2\select2.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="MailKit" Version="4.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.14" />
+    <PackageReference Include="X.PagedList" Version="8.4.7" />
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="8.4.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj" />
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj" />
+    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="wwwroot\StudentImageFile\" />
+    <Folder Include="wwwroot\RegisterTemp\images\" />
+  </ItemGroup>
+
+</Project>

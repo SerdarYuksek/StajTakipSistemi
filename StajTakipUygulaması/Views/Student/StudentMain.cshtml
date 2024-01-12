@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="76x76" href="~/AdminTemp/assets/img/apple-icon.png">
+    <title>
+        Öğrenci Sayfası
+    </title>
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <!-- Nucleo Icons -->
+    <link href="~/AdminTemp/assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="~/AdminTemp/assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link href="~/AdminTemp/assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link id="pagestyle" href="~/AdminTemp/assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+
+<body class="g-sidenav-show bg-gray-100">
+    <div class="min-height-300 bg-primary position-absolute w-100"></div>
+    <aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4">
+        <div class="sidenav-header">
+            <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+            <a class="navbar-brand m-0" href="https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html" target="_blank">
+                <h5 class="font-weight-bold">Staj Araçları</h5>
+            </a>
+        </div>
+        <hr class="horizontal dark mt-0">
+        <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" asp-action="StudentMain" asp-controller="Student">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text mb-3 font-weight-bold">Anasayfa</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="CreateIntern" asp-controller="StajCrud">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="ni ni-fat-add text-success text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text mb-3 font-weight-bold">Staj Başvuru Ekranı</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="ListIntern" asp-controller="StajCrud">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="ni ni-bullet-list-67 text-info text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text mb-3 font-weight-bold">Staj Bilgilerim</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="ListInternFile" asp-controller="StajCrud">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="ni ni-archive-2 text-secondary text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text mb-3 font-weight-bold">Staj Rapor ve Form Şablonları</span>
+                    </a>
+                </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" asp-action="AnketView" asp-controller="AnketCrud">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-poll  text-sm opacity-10" style="color: #ff8800;"></i>
+                        </div>
+                        <span class="nav-link-text mb-3 font-weight-bold">Anket</span>
+                    </a>
+                </li>
+
+                <li class="nav-item mt-3">
+                    <h5 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Kullanıcı</h5>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="StudentUp" asp-controller="User">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text mb-3 font-weight-bold">@User.Identity?.Name</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="LogOut" asp-controller="Account">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="ni ni-bold-left text-danger text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text mb-3 font-weight-bold">Çıkış Yap</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+
+    <main class="main-content position-relative border-radius-lg ">
+        <!-- Navbar -->
+        <nav class="navbar navbar-main navbar-expand-lg mt-3 px-0 mx-4 navbar-light border-radius-xl" id="navbarBlur" data-scroll="false">
+            <div class="container-fluid py-1 px-3">
+                <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+                    <div class="d-flex align-items-center mx-auto">
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link navbar-brand font-weight-bold" aria-current="page" href="#">Staj-Akış-Şeması</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link navbar-brand font-weight-bold" href="#">Staj-Uygulama-Esasları</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link navbar-brand font-weight-bold" asp-action="SSS" asp-controller="Personal">Sık-Sorulan-Sorular</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- Progress bar html Kodları -->
+
+        <div class="container-fluid  py-9">
+            <div class="row g-9 justify-content-center mb-0 me-5 mt-3" style="width: max-content;">
+
+                <div class="col-lg-6" style="width:1500px; height:1400px; ">
+                    <div class="card">
+                        <div class="card-header pb-0 pt-3 bg-transparent">
+                            <h6 class="text-capitalize text-center">Staj İlerleme Durumu</h6>
+                        </div>
+                        <div class="row text-center">
+
+                         
+                                
+                            
+                            <div class="col-sm-4">
+                                <div class="progressbar">
+                                    <div class="second circle" data-percent="@ViewBag.firststaj">
+                                        <strong></strong>
+                                        <span class="fw-bold ">@ViewBag.firstname</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="progressbar">
+                                    <div class="second circle" data-percent="@ViewBag.secstaj">
+                                        <strong></strong>
+                                        <span class="fw-bold">@ViewBag.secname</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="progressbar">
+                                    <div class="second circle" data-percent="@ViewBag.masterstaj">
+                                        <strong></strong>
+                                        <span class="fw-bold">İş Yeri<br>Eğitimi</span>
+                                    </div>
+                                </div>
+                            </div>
+                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Flooter kodları -->
+            <footer class="footer mt-0 ">
+                <div class="mt-0 ml-1"  >
+                    <div class="copyright">
+                        <p class="font-weight-bold text-center" target="_blank">
+                            © <script>
+                                  document.write(new Date().getFullYear())
+                            </script>, Tasarlayan <i class="fa fa-heart"></i>Nursena KÜÇÜKASLAN/Serdar YÜKSEK
+                        </p>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </main>
+
+
+
+    <!--   Core JS Files   -->
+    <script src="~/admintemp/assets/js/plugins/chartist.min.js"></script>
+    <script src="~/AdminTemp/assets/js/core/popper.min.js"></script>
+    <script src="~/AdminTemp/assets/js/core/bootstrap.min.js"></script>
+    <script src="~/AdminTemp/assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="~/AdminTemp/assets/js/plugins/smooth-scrollbar.min.js"></script>
+    <script src="~/admintemp/assets/js/plugins/chartjs.min.js"></script>
+    <script src="https://rawgit.com/kottenator/jquery-circle-progress/1.2.2/dist/circle-progress.js"></script>
+
+
+    <!--   Progress Bar JS Kodları   -->
+    <script>
+        $(document).ready(function ($) {
+            function animateElements() {
+                $('.progressbar').each(function () {
+                    var elementPos = $(this).offset().top;
+                    var topOfWindow = $(window).scrollTop();
+                    var percent = $(this).find('.circle').attr('data-percent');
+                    var animate = $(this).data('animate');
+                    if (elementPos < topOfWindow + $(window).height() - 30 && !animate) {
+                        $(this).data('animate', true);
+                        $(this).find('.circle').circleProgress({
+                            // startAngle: -Math.PI / 2,
+                            value: percent / 20,
+                            size: 400,
+                            thickness: 15,
+                            fill: {
+                                color: '#663399'
+                            }
+                        }).on('circle-animation-progress', function (event, progress, stepValue) {
+                            $(this).find('strong').text((stepValue * 100).toFixed(0) + "%");
+                        }).stop();
+                    }
+                });
+            }
+
+            animateElements();
+            $(window).scroll(animateElements);
+        });
+    </script>
+
+    <script>
+        var win = navigator.platform.indexOf('Win') > -1;
+        if (win && document.querySelector('#sidenav-scrollbar')) {
+            var options = {
+                damping: '0.5'
+            }
+            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+        }
+    </script>
+    <!-- Github buttons -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="~/AdminTemp/assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+</body>
+
+</html>

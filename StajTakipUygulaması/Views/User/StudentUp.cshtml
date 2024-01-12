@@ -1,0 +1,102 @@
+﻿@model EntityLayer.Concrate.Student
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Profil Bilgi Güncelleme Sayfası</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <section class="h-100 h-custom" style="background-color: #527db2;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-8 col-xl-6">
+                    <div class="card rounded-3">
+                        <div class="card-body p-4 p-md-5">
+                            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Kişisel Bilgi Formu</h3>
+                            <!-- Bilgi Güncelleme Formu -->
+                            @using (Html.BeginForm("StudentUp", "User", FormMethod.Post, new { @class = "px-md-2", enctype = "multipart/form-data" }))
+                            {
+
+                                <div class="form-outline mb-4">
+                                    <a class="avartar">
+                                        <img src="/StudentImageFile/@Model.Image" class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;">
+                                        <input type="file" name="ımage" class="avartar" />
+                                        @Html.HiddenFor(x => x.Image)
+                                        @Html.ValidationMessageFor(x => x.Image)
+                                    </a>
+
+                                    <div class="form-outline mb-4 mt-4">
+                                        @Html.TextBoxFor(x => x.AdSoyad, new { @class="form-control", placeholder = "Ad Soyad",type="text", name="adsoyad", value=Model.AdSoyad })
+                                        @Html.ValidationMessageFor(x => x.AdSoyad )
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        @Html.TextBoxFor(x => x.TCNO, new  { @class="form-control", placeholder = "TC Kimlik No",type="text", name="tcno", value=Model.TCNO })
+                                        @Html.ValidationMessageFor(x => x.TCNO )
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        @Html.TextBoxFor(x => x.Mail, new { @class="form-control", placeholder = "E-Mail",type="email", name="mail", value=Model.Mail })
+                                        <i class="zmdi zmdi-email small"></i>
+                                        @Html.ValidationMessageFor(x => x.Mail )
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label for="gender" class="radio-label">Cinsiyet Seçiniz :</label>
+                                        <div class="form-radio-item">
+                                            @Html.RadioButtonFor(x =>x.Cinsiyet, true , new { id = "male", value=Model.Cinsiyet })
+                                            @Html.ValidationMessageFor(x => x.Cinsiyet )
+                                            <label for="male">Erkek</label>
+                                            <span class="check"></span>
+                                        </div>
+                                        <div class="form-radio-item form-holder ">
+                                            @Html.RadioButtonFor(x =>x.Cinsiyet, false, new { id = "female", value=Model.Cinsiyet })
+                                            @Html.ValidationMessageFor(x => x.Cinsiyet )
+                                            <label for="female">Kadın</label>
+                                            <span class="check"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.TextBoxFor(x => x.OgrenciNo, new { placeholder = "Öğrenci No" ,type="text", name="ogrencino", value=Model.OgrenciNo })
+                                        @Html.ValidationMessageFor(x => x.OgrenciNo )
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="sınıf">Sınıf :</label>
+                                        <div class="form-select">
+                                            <select name="sınıf" id="sınıf">
+                                                <option selected>@Model.sınıf</option>
+                                                <option value="1.sınıf">1.Sınıf</option>
+                                                <option value="2.sınıf">2.Sınıf</option>
+                                                <option value="3.sınıf">3.Sınıf</option>
+                                                <option value="4.sınıf">4.Sınıf</option>
+                                                <option value="Yüksek Lisans">Yüksek Lisans</option>
+                                            </select>
+                                            <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                                            @Html.ValidationMessageFor(x => x.sınıf )
+                                        </div>
+                                    </div>
+                                </div>
+
+                                @Html.HiddenFor(x => x.KullaniciID)
+
+                                <div class="d-md-flex d-grid gap-2 justify-content-md-end">
+                                    <input type="submit" value="Güncelle" class="btn btn-info btn-lg mr-1 justify-content-md-end" name="submit" id="submit" />
+                                    <a asp-action="StudentMain" asp-controller="Student" class="btn btn-danger btn-lg">Çıkış</a>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
+

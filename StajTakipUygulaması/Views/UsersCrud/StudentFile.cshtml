@@ -1,0 +1,112 @@
+﻿@model List<EntityLayer.Concrate.Dosya>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <title>Öğrenci Dosyaları Görüntüleme Sayfası</title>
+</head>
+<body style="background-color:#cfcbb8">
+  
+    
+    <div class="container justify-content-center ">
+
+                <h1 class=" my-5 text-center">Öğrenci Dosyaları</h1>
+
+                @using (Html.BeginForm("", "", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+
+            foreach (var item in Model )
+            {
+                if (item.basvuru != null)
+                {
+                    <h3 class="text-center mt-5"></h3>
+                    <div class="col-md-12 mb-5">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Staj Başvuru Formu</h5>
+                                        <div>
+                                            @if (ViewBag.onaykontrol == false)
+                                            {
+                                                <input class="form-control mb-3" type="text" value="@item.basvuru" aria-label="Disabled input example" disabled readonly>
+
+                                                <div class="d-flex justify-content-end">
+                                                    <a href="/StajCrud/Basvuruonay/@item.StudentID" class='text-danger' data-toggle='tooltip' data-original-title='go'>
+                                                        <input value="Başvuru Onay" class="btn btn-outline-success" name="submit" id="submit" />
+                                                    </a>
+                                                    <input type="submit" value="İndir" class="btn btn-outline-dark mx-2" name="submit" id="submit" />
+                                                    <input type="submit" value="Görüntüle" class="btn btn-outline-info" name="submit" id="submit" />
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <input class="form-control mb-3" type="text" value="@item.basvuru" aria-label="Disabled input example" disabled readonly>
+
+                                                <div class="d-flex justify-content-end">
+
+                                                    <input type="submit" value="Başvuru Onay" class="btn btn-outline-success" name="submit" id="submit" disabled />
+                                                    <input type="submit" value="İndir" class="btn btn-outline-dark mx-2" name="submit" id="submit" disabled />
+                                                    <input type="submit" value="Görüntüle" class="btn btn-outline-info" name="submit" id="submit" disabled />
+                                                </div>
+                                            }
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                   
+                else if(item.raporsablon != null)
+                {
+                    <div class="col-md-12 mt-5">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Staj Defteri/Raporu</h5>
+                                        @if (ViewBag.kabulkontrol == false)
+                                        {
+                                            <input class="form-control mb-3" type="text" value="@item.raporsablon" aria-label="Disabled input" disabled readonly>
+
+                                            <div class="d-flex justify-content-end">
+                                                <a href="/StajCrud/StajKabul/@item.StudentID" class='text-danger' data-toggle='tooltip' data-original-title='go'>
+                                                    <input value="Staj Kabul" class="btn btn-outline-success" name="submit" id="submit" />
+                                                </a>
+                                                <input type="submit" value="İndir" class="btn btn-outline-dark mx-2" name="submit" id="submit" />
+                                                <input type="submit" value="Görüntüle" class="btn btn-outline-info" name="submit" id="submit" />
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <input class="form-control mb-3" type="text" value="@item.raporsablon" aria-label="Disabled input" disabled readonly>
+
+                                            <div class="d-flex justify-content-end">
+
+                                                <input type="submit" value="Staj Kabul" class="btn btn-outline-success" name="submit" id="submit" disabled />
+                                                <input type="submit" value="İndir" class="btn btn-outline-dark mx-2" name="submit" id="submit" disabled />
+                                                <input type="submit" value="Görüntüle" class="btn btn-outline-info" name="submit" id="submit" disabled />
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                    
+            }
+                   <h2 class="text-center"> @ViewBag.Kayıt</h2>
+
+                <div class="d-flex justify-content-end">
+                    <a asp-action="PersonalMain" asp-controller="Personal" class="btn btn-danger ">Ana Sayfaya Dön</a>
+                </div>
+                }
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

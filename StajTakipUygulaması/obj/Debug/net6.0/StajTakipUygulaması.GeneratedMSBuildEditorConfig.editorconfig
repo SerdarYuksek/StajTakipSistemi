@@ -1,0 +1,131 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = StajTakipUygulaması
+build_property.RootNamespace = StajTakipUygulaması
+build_property.ProjectDir = C:\Users\yukse.DESKTOP-46EUPBS\Source\Repos\NewRepo\StajTakipUygulaması\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\yukse.DESKTOP-46EUPBS\Source\Repos\NewRepo\StajTakipUygulaması
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/Account/MailConfirm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxNYWlsQ29uZmlybS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/Account/PersonalLog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxQZXJzb25hbExvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/Account/PersonalPasswordReset.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxQZXJzb25hbFBhc3N3b3JkUmVzZXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/Account/PersonalReg.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxQZXJzb25hbFJlZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/Account/StudentLog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTdHVkZW50TG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/Account/StudentPasswordReset.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTdHVkZW50UGFzc3dvcmRSZXNldC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/Account/StudentReg.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTdHVkZW50UmVnLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/Admin/AdminMain.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5NYWluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/AnketCrud/AnketView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5rZXRDcnVkXEFua2V0Vmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/FileManagment/FileUpload.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsZU1hbmFnbWVudFxGaWxlVXBsb2FkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/Home/Main.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNYWluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/Personal/PersonalMain.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uYWxcUGVyc29uYWxNYWluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/Personal/SSS.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29uYWxcU1NTLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/StajCrud/CreateIntern.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhakNydWRcQ3JlYXRlSW50ZXJuLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/StajCrud/ListIntern.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhakNydWRcTGlzdEludGVybi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/StajCrud/ListInternFile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhakNydWRcTGlzdEludGVybkZpbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/StajCrud/ListInternInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhakNydWRcTGlzdEludGVybkluZm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/StajCrud/ListStudentIntern.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhakNydWRcTGlzdFN0dWRlbnRJbnRlcm4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/Student/StudentMain.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxTdHVkZW50TWFpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/UsersCrud/PersonalList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNDcnVkXFBlcnNvbmFsTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/UsersCrud/PersonalUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNDcnVkXFBlcnNvbmFsVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/UsersCrud/StudentFile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNDcnVkXFN0dWRlbnRGaWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/UsersCrud/StudentList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNDcnVkXFN0dWRlbnRMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/UsersCrud/StudentUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNDcnVkXFN0dWRlbnRVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/User/PersonalUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQZXJzb25hbFVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/User/StudentUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxTdHVkZW50VXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/yukse.DESKTOP-46EUPBS/Source/Repos/NewRepo/StajTakipUygulaması/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 

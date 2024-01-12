@@ -1,0 +1,107 @@
+﻿@model EntityLayer.Concrate.Personal
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Personel Güncelleme Sayfası</title>
+
+	<!-- Font Icon -->
+	<link rel="stylesheet" href="~/RegisterTemp/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+	<!-- Main css -->
+	<link rel="stylesheet" href="~/RegisterTemp/css/style.css">
+</head>
+<body>
+
+	<div class="main">
+		<div class="container">
+			<div class="signup-content">
+				<div class="signup-img">
+					<img src="~/registertemp/images/logo.png" />
+				</div>
+				<!-- Bilgi Güncelleme FORMU -->
+				<div class="signup-form">
+					@using (Html.BeginForm("PersonalUpdate", "UsersCrud", FormMethod.Post, new { @class = "register-form", id = "register-form", enctype = "multipart/form-data" }))
+					{
+						<h2> Personel Güncelleme Formu</h2>
+
+						<div class="form-group">
+							@Html.TextBoxFor(x => x.AdSoyad, new { placeholder = "Ad Soyad",type="text", name="adsoyad", value=Model.AdSoyad })
+							@Html.ValidationMessageFor(x => x.AdSoyad )
+						</div>
+
+						<div class="form-group">
+							@Html.TextBoxFor(x => x.TCNO, new { placeholder = "TC Kimlik No",type="text", name="tcno", value=Model.TCNO })
+							@Html.ValidationMessageFor(x => x.TCNO )
+						</div>
+
+						<div class="form-group">
+							@Html.TextBoxFor(x => x.Mail, new { placeholder = "E-Mail",type="email", name="mail", value=Model.Mail })
+							@Html.ValidationMessageFor(x => x.Mail )
+						</div>
+
+						<div class="form-radio">
+							<label for="gender" class="radio-label">Cinsiyet Seçiniz :</label>
+							<div class="form-radio-item">
+								@Html.RadioButtonFor(x =>x.Cinsiyet, true , new { id = "male", value=Model.Cinsiyet })
+								@Html.ValidationMessageFor(x => x.Cinsiyet )
+								<label for="male">Erkek</label>
+								<span class="check"></span>
+							</div>
+							<div class="form-radio-item">
+								@Html.RadioButtonFor(x =>x.Cinsiyet, false, new { id = "female", value=Model.Cinsiyet })
+								@Html.ValidationMessageFor(x => x.Cinsiyet )
+								<label for="female">Kadın</label>
+								<span class="check"></span>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<input type="file" name="Image" class="form-control" />
+							@Html.ValidationMessageFor(x => x.Image)
+						</div>
+
+						<div class="form-group">
+							@Html.TextBoxFor(x => x.PersonalNo, new { placeholder = "Personel No" ,type="text", name="ogrencino", value=Model.PersonalNo })
+							@Html.ValidationMessageFor(x => x.PersonalNo )
+						</div>
+
+						<div class="form-group">
+							@Html.HiddenFor(x => x.KullaniciID)
+						</div>
+
+						<div class="form-group">
+							<label for="unvan">Ünvan :</label>
+							<div class="form-select">
+								<select name="unvan" id="unvan" >
+									<option selected>@Model.Unvan</option>
+									<option value="Prof.Dr">Prof.Dr.</option>
+									<option value="Doç.Dr.">Doç.Dr.</option>
+									<option value="Dr.Öğr.Üyesi">Dr.Öğr.Üyesi</option>
+									<option value="Öğretim Görevlisi">Öğretim Görevlisi</option>
+									<option value="Araştırma Görevlisi">Araştırma Görevlisi</option>
+								</select>
+								<span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+							</div>
+						</div>
+
+						<div class="form-submit">
+
+							<input type="reset" value="Temizle" class="submit" name="reset" id="reset" />
+							<input type="submit" value="Güncelle" class="submit" name="submit" id="submit" />
+						</div>
+
+					}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- JS -->
+	<script src="~/RegisterTemp/vendor/jquery/jquery.min.js"></script>
+	<script src="~/RegisterTemp/js/main.js"></script>
+</body>
+</html>

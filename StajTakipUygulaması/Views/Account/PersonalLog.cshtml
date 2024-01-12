@@ -1,0 +1,151 @@
+﻿@model EntityLayer.Concrate.Personal
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+	<title>Personel Giriş Sayfası</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="~/LoginTemp/images/icons/favicon.ico" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/LoginTemp/vendor/bootstrap/css/bootstrap.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/LoginTemp/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/LoginTemp/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/LoginTemp/vendor/animate/animate.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/LoginTemp/vendor/css-hamburgers/hamburgers.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/LoginTemp/vendor/animsition/css/animsition.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/LoginTemp/vendor/select2/select2.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/LoginTemp/vendor/daterangepicker/daterangepicker.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="~/LoginTemp/css/util.css">
+	<link rel="stylesheet" type="text/css" href="~/LoginTemp/css/main.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+</head>
+<body style="background-color: #666666;">
+
+	<!--GİRİŞ FORMU-->
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+
+				@using (Html.BeginForm("PersonalLog", "Account", FormMethod.Post, new { @class = "login100-form validate-form" }))
+				{
+	
+					<span class="login100-form-title p-b-43">
+						Lütfen Bilgilerinizi Giriniz
+					</span>
+
+					<div class="wrap-input100 mb-5 ">
+						@Html.TextBoxFor(x => x.TCNO, new { @class = "input100" ,placeholder = "TC Kimlik No"  })
+						@Html.ValidationMessageFor(x => x.TCNO, null, new { @class = "input100" } )
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="d-flex">
+						<div class="wrap-input100 mr-2">
+							@Html.TextBoxFor(x => x.Password, new { @class = "input100", placeholder = "Şifre", type = "password", id = "password", name = "password", required = "true" })
+							@Html.ValidationMessageFor(x => x.Password, null, new { @class = "input100" })
+						</div>
+
+						<div class="input-group-append mt-4" style="font-size: 20px;">
+							<span class="input-group-text" onclick="password_show_hide();">
+								<i class="fas fa-eye" id="show_eye"></i>
+								<i class="fas fa-eye-slash d-none" id="hide_eye"></i>
+							</span>
+						</div>
+					</div>
+
+					<p>@ViewBag.hata</p>
+
+					<div style="text-align: right; margin-top: 10px; margin-bottom: 25px;">
+						<a asp-action="MailConfirm" asp-controller="Account" class="txt1">
+							Şifremi Unuttum?
+						</a>
+					</div>
+
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4 d-flex justify-content-start">
+								<a href="@Url.Action("Main", "Home")" class="btn btn-danger btn-lg rounded-circle">
+									<i class="fas fa-arrow-right fa-flip-horizontal"></i>
+								</a>
+							</div>
+							<div class="col-md-8">
+								<div class="container-login100-form-btn">
+									<button class="login100-form-btn btn-block">
+										Giriş Yap
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="text-center fs-2 p-t-46 p-b-20">
+						<span class="txt2">
+							Veya Kayıt Olma Talebi İçin Tıklayınız
+						</span>
+					</div>
+
+					<div class="col-md-12 text-center">
+						<a asp-action="PersonalReg" asp-controller="Account" class=" btn-grad">Kayıt Ol</a>
+					</div>
+
+
+				}
+
+				<div class="login100-more" style="background-image: url('/LoginTemp/images/personel.png'); background-size:contain; ">
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+    
+	<!--===============================================================================================-->
+	<script src="~/LoginTemp/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="~/LoginTemp/vendor/animsition/js/animsition.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="~/LoginTemp/vendor/bootstrap/js/popper.js"></script>
+	<script src="~/LoginTemp/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="~/LoginTemp/vendor/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="~/LoginTemp/vendor/daterangepicker/moment.min.js"></script>
+	<script src="~/LoginTemp/vendor/daterangepicker/daterangepicker.js"></script>
+	<!--===============================================================================================-->
+	<script src="~/LoginTemp/vendor/countdowntime/countdowntime.js"></script>
+	<!--===============================================================================================-->
+	<script src="~/LoginTemp/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"crossorigin="anonymous"></script>
+	<script>
+		function password_show_hide() {
+			var x = document.getElementById("password");
+			var show_eye = document.getElementById("show_eye");
+			var hide_eye = document.getElementById("hide_eye");
+			hide_eye.classList.remove("d-none");
+			if (x.type === "password") {
+				x.type = "text";
+				show_eye.style.display = "none";
+				hide_eye.style.display = "block";
+			} else {
+				x.type = "password";
+				show_eye.style.display = "block";
+				hide_eye.style.display = "none";
+			}
+		}
+	</script>
+</body>
+</html>
+

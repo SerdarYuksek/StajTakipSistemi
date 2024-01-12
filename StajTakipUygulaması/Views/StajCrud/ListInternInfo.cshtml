@@ -1,0 +1,99 @@
+﻿@model List<EntityLayer.Concrate.StajBilgi>
+
+<html lang="tr">
+<head>
+    <title>Öğrenci Staj Bilgileri Görüntüleme Sayfası</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha512-BAhBUU3hMwJcVY7v6MjLgNmB/UJhITh+Gx6wyjO8lNt2CJ1+G6IdGdXUdy5n4oUsneDR0YqKe3f1i9v9me86Kg==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link href="~/css/list.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+</head>
+<body>
+    <div class="container mt-3 mb-4">
+        <div class="col-lg-9 mt-4 mt-lg-0">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="user-dashboard-info-box table-responsive mb-0 bg-white p-4 shadow-sm">
+                        <!-- Öğrenci Staj Bilgileri Listeleme Tablosu -->
+                        <table class="table manage-candidates-top mb-0 justify-content-center ">
+                            @foreach (var item in Model)
+                            {
+                            <thead class="text-center">
+                                <tr>
+                                    <h3 style="text-align:center; font-size: 36px; margin-bottom: 20px;">@item.StajTürü</h3>
+                                </tr>
+                            </thead>
+                            
+                                <ul class="list-group list-group-flush" style="text-align:center;">
+                                    <li class="list-group-item"><strong>Şirket/Firma Adı:</strong> @item.AdUnvan</li>
+                                    <li class="list-group-item"><strong>Şirket/Firma Adres:</strong> @item.Adres</li>
+                                    <li class="list-group-item"><strong>Şirket/Firma Alanı:</strong> @item.Alanı</li>
+                                    <li class="list-group-item"><strong>Şirket/Firma Yetkili Kişinin Adı:</strong> @item.YetkiliAd</li>
+                                    <li class="list-group-item"><strong>Şirket/Firma Tel No:</strong> @item.TelNo</li>
+                                    <li class="list-group-item"><strong>Şirket/Firma Mail:</strong> @item.Mail</li>
+                                    <li class="list-group-item"><strong>Şirket/Firma Faks No:</strong> @item.FaksNo</li>
+                                    <li class="list-group-item"><strong>Şirket/Firma Web Site:</strong> @item.WebSite</li>
+                                    <li class="list-group-item"><strong>Staj Başlama Tarihi:</strong> @item.Başlamatrh</li>
+                                    <li class="list-group-item"><strong>Staj Bitiş Tarihi:</strong> @item.Bitistrh</li>
+                                    <li class="list-group-item"><strong>Staj Türü:</strong> @item.StajTürü</li>
+
+                                    <div class="list-group-item">
+                                        <strong>Resmi Tatil Dahil:</strong>
+                                        @if (item.ResmiTatil == true)
+                                        {
+                                            <i class="fas fa-check-circle fa-lg" style="color: #59ff00;"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="fas fa-window-close fa-lg" style="color: #e00000;"></i>
+                                        }
+                                    </div>
+
+                                    <div class="list-group-item">
+                                        <strong>Cumartesi Dahil:</strong>
+                                        @if (item.CmtDahil == true)
+                                        {
+                                            <i class="fas fa-check-circle fa-lg" style="color: #59ff00;"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="fas fa-window-close fa-lg " style="color: #e00000;"></i>
+                                        }
+                                    </div>
+
+                                    <div class="list-group-item mb-5">
+                                        <strong>İŞ Yeri Eğitimi:</strong>
+                                        @if (item.Egitim == true)
+                                        {
+                                            <i class="fas fa-check-circle fa-lg" style="color: #59ff00;"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="fas fa-window-close fa-lg" style="color: #e00000;"></i>
+                                        }
+                                    </div>
+                                </ul>
+                            }
+
+                        </table>
+
+                        <div class="d-md-flex d-grid gap-2 justify-content-md-end mt-5">
+                            <input value="Düzenle" class="btn btn-primary btn-lg mr-1 justify-content-md-end" name="submit" id="submit" />
+                            <a asp-action="StudentMain" asp-controller="Student" class="btn btn-danger btn-lg">Ana Sayfaya Dön</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha512-rA/KkevB6sdV1QovhN2eeXuJFiJ3+UZU99oE0F0yvIfI5GlfQjZJnIqoBO2eS6qqnbwKQZy5/n7T8whBLWkUHw==" crossorigin="anonymous"></script>
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+

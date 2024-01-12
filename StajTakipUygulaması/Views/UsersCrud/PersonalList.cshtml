@@ -1,0 +1,98 @@
+﻿@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+@model IPagedList<EntityLayer.Concrate.Personal>
+
+
+<html lang="tr">
+<head>
+    <title>Personel Görüntüleme Sayfası</title>
+    <!-- Bootstrap CSS -->
+    <link href="~/css/list.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha512-BAhBUU3hMwJcVY7v6MjLgNmB/UJhITh+Gx6wyjO8lNt2CJ1+G6IdGdXUdy5n4oUsneDR0YqKe3f1i9v9me86Kg==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+</head>
+<body>
+    <div class="container mt-3 mb-4 justify-content-center ">
+    <div class="col-lg-9 mt-4 mt-lg-0">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="user-dashboard-info-box table-responsive mb-0  p-4 ">
+                        <!-- Personel Listeleme Tablosu -->
+                    <table class="table manage-candidates-top mb-0">
+
+                        <thead>
+                            <tr>
+                                <th>Personel Bilgi</th>
+                                <th class="text-center">Ünvan</th>
+                                <th class="action text-right">Araçlar</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            @foreach (var item in Model)
+                                {
+                                   
+                            <tr class="candidates-list">
+                                <td class="title">
+                                    <div class="thumb ">
+                                         <img class="img-fluid" src="/PersonalImageFile/@item.Image" alt="">
+                                    </div>
+                                    <div class="candidate-list-details">
+                                        <div class="candidate-list-info">
+                                            <div class="candidate-list-title">
+                                                <h5 class="mb-0">@item.AdSoyad</h5>
+                                            </div>
+                                            <div class="candidate-list-option">
+                                                <ul class="list-unstyled">
+                                                    <li><i class="fas fa-id-badge pr-1"></i>@item.PersonalNo</li>
+                                                    <li><i class="fas fa-envelope pr-1"></i>@item.Mail</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td class="candidate-list-favourite-time text-center">
+                                    <a class="candidate-list-favourite order-2"><i class="fas fa-id-card" style="color: grey;"></i></a>
+                                    <span class="candidate-list-time order-1">@item.Unvan</span>
+                                </td>
+
+                                <td>
+                                    <ul class="list-unstyled mb-0 d-flex justify-content-end">
+
+                                                @Html.Raw("<li>")
+                                                <a href="/UsersCrud/PersonalUpdate/@item.KullaniciID" class='text-info' data-toggle='tooltip' title='' data-original-title='Edit' onclick="return confirm ('Düzenlemek istediğinize emin misiniz?')">
+                                                    <i class='fas fa-pencil-alt'></i>
+                                                </a>
+                                                @Html.Raw("</li>")
+
+                                                @Html.Raw("<li>")
+                                                <a href='@Url.Action("PersonalDel", new { item.KullaniciID })' class='text-danger' data-toggle='tooltip' title='' data-original-title='Delete' onclick="return confirm ('Silmek istediğinize emin misiniz?')">
+                                                    <i class='far fa-trash-alt'></i>
+                                                </a>
+                                                @Html.Raw("</li>")
+                                    </ul>
+                                </td>
+                            </tr>
+                           }
+
+                        </tbody>
+
+                    </table>
+                </div>
+                    <!-- Sayfalama kodu -->
+                    @Html.PagedListPager((IPagedList)Model, page => Url.Action("PersonalList", new { page }))   
+            </div>
+        </div>
+    </div>
+</div>
+
+ 
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha512-rA/KkevB6sdV1QovhN2eeXuJFiJ3+UZU99oE0F0yvIfI5GlfQjZJnIqoBO2eS6qqnbwKQZy5/n7T8whBLWkUHw==" crossorigin="anonymous"></script>
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+</body>
+</html>
